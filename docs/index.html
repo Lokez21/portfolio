@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body tabindex="0">
+
+    <!-- Navbar -->
+    <nav id="navbar-example2" class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Toast Container for Flash Messages -->
+    <div class="toast-container position-fixed top-0 start-50 translate-middle-x p-3" style="z-index: 9999;">
+        
+          
+        
+    </div>
+
+
+    <!-- Hero Section -->
+    <section id="home" class="d-flex align-items-center justify-content-center text-center text-white hero-section">
+        <div class="container">
+            <h1 class="display-3 fw-bold mb-3 animate-up parallax-element" data-speed="0.25">Hello, I'm <span class="text-primary-gradient">Lokesh Sivakumar</span> <span class="wave-animation">👋</span></h1>
+            <p class="lead mb-4 animate-up delay-1 parallax-element" data-speed="0.18">Application Architect @ University of Oxford</p>
+            <div class="mb-4 animate-up delay-2 parallax-element" data-speed="0.12">
+                
+                    <a href="https://linkedin.com/in/lokez" target="_blank" class="text-white fs-2 mx-3 social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                
+                
+                    <a href="https://github.com/lokez21" target="_blank" class="text-white fs-2 mx-3 social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                
+            </div>
+            <a href="#projects" class="btn btn-primary btn-lg rounded-pill animate-up delay-3 parallax-element" data-speed="0.06">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">About Me</h2>
+            <div class="row align-items-center">
+                <div class="col-md-4 text-center mb-4 mb-md-0">
+                    
+                        <img src="static/images/Lokesh_profile_pic_linkedin.jpg" alt="Profile" class="img-fluid rounded-circle profile-img shadow-lg">
+                    
+                </div>
+                <div class="col-md-8">
+                    <p class="lead" style="white-space: pre-line;">
+                        
+                            I am an Applications Architect at the University of Oxford, specializing in the design and deployment of high-performance, scalable cloud ecosystems. With a career spanning over a decade, I bridge the gap between complex business challenges and elegant technical solutions.
+
+Currently, I am deepening my expertise in Artificial Intelligence and its business use cases at Oxford University, integrating cutting-edge AI methodologies into enterprise-level architectures. My focus is on building &#34;intelligent&#34; autonomous systems-leveraging Python (Django/FastAPI) and AWS cloud solutions to create data-driven applications that don&#39;t just store information but provide actionable insights with enhanced security.
+
+Core Expertise:
+- Architecture: Microservices, Scalable Cloud Infrastructure (AWS), secure RESTful API Design.
+- AI &amp; Data: Advanced Data Analysis &amp; creating Advanced Reports used by Directors for strategic decision making purposes.
+- Leadership: Mentoring cross-functional teams and managing mission-critical institutional projects.
+                        
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Experience</h2>
+            <div class="row">
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="card-title fw-bold">Applications Architect</h4>
+                                <span class="badge bg-primary rounded-pill">2023 - Present</span>
+                            </div>
+                            <h5 class="card-subtitle mb-3 text-muted">University of Oxford</h5>
+                            <p class="card-text" style="white-space: pre-line;">• Full-Stack System Ownership: Lead Architect for a high-concurrency, in-house CRM platform built on Django. Engineered complex logic to handle the multi-faceted relationships between student lifecycles, tutor management, and academic modules. Successfully scaled the architecture to support 200+ integrated services, ensuring high availability and data integrity for thousands of users.
+
+• Architected High-Availability Workflows: Engineered a transition to containerized environments to ensure parity across development and production. Introduced automated CI/CD pipelines that served as a critical quality gate, drastically increasing system resilience and ensuring 24/7 service continuity for mission-critical apps.
+
+• Cloud Infrastructure Leadership: Orchestrated the migration of core institutional services to AWS (ECS, DynamoDB), enhancing resource efficiency and ensuring 99.9% availability for massive data workloads.
+
+• Interim Business Systems Development Lead: Stepped into leadership for mission-critical systems, managing high-level stakeholders and ensuring project continuity during pivotal transitions.
+
+• System Interoperability &amp; Integration: Engineered complex API architectures to synchronize data between internal Oxford systems and critical external third-party platforms. Focused on high-security authentication protocols and robust error-handling to ensure seamless, real-time data integrity across the university’s digital ecosystem.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="card-title fw-bold">Senior Applications Developer</h4>
+                                <span class="badge bg-primary rounded-pill">2020 - 2023</span>
+                            </div>
+                            <h5 class="card-subtitle mb-3 text-muted">University of Oxford</h5>
+                            <p class="card-text" style="white-space: pre-line;">• Framework Modernization: Led the structural overhaul of departmental applications from Web2py to Django, resulting in a 40% increase in development velocity and significantly hardened security.
+
+• Revenue Growth: Collaborated with the IT Director to automate technical reporting and data visualization, directly contributing to a 25% increase in departmental revenue.
+
+• DevOps Integration: Spearheaded the transition to containerized environments (Docker) and CI/CD pipelines, reducing deployment errors and downtime.
+
+• System Interoperability &amp; Integration: Engineered complex API architectures to synchronize data between internal Oxford systems and critical external third-party platforms. Focused on high-security authentication protocols and robust error-handling to ensure seamless, real-time data integrity across the university’s digital ecosystem.
+
+• Service Management: ITIL Certified; applied best-practice frameworks to bridge the gap between technical delivery and stakeholder expectations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="card-title fw-bold">Web/Software Developer</h4>
+                                <span class="badge bg-primary rounded-pill">2014 - 2020</span>
+                            </div>
+                            <h5 class="card-subtitle mb-3 text-muted">Bournemouth University</h5>
+                            <p class="card-text" style="white-space: pre-line;">• Cost Optimization: Architected server infrastructure solutions that reduced monthly operational costs by 75%.
+
+• Team Leadership: Managed a team of 5 developers using Rapid Application Development (RAD) to deliver multiple university-wide applications.
+
+• End-to-End SDLC: Owned the entire lifecycle of software products, from UI/UX conceptualization to secure deployment.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 border-0 shadow-sm hover-card">
+                        <div class="card-body p-4">
+                            <div class="d-flex justify-content-between align-items-start mb-3">
+                                <h4 class="card-title fw-bold">Software Analyst</h4>
+                                <span class="badge bg-primary rounded-pill">2012 - 2014</span>
+                            </div>
+                            <h5 class="card-subtitle mb-3 text-muted">Customer Impact Solutions Ltd</h5>
+                            <p class="card-text" style="white-space: pre-line;">• Enterprise-Scale Development: Contributed to the engineering of complex, high-traffic applications for global multinational clients, ensuring performance at scale.
+
+• Infrastructure Transformation: Co-led a three-person task force to rebuild core IT infrastructure, modernizing the systems powering the company&#39;s flagship survey and feedback programs.
+
+• Process Automation: Designed and deployed applications serving over 10,000+ customers, implementing custom automation algorithms that eliminated manual routine tasks and increased operational efficiency.
+
+• Security &amp; Data Privacy: Engineered a secure, encrypted FTP gateway for sensitive client data transfers, prioritizing identity protection and rigorous data integrity.
+
+• Cloud Migration: Orchestrated the transition of legacy on-premise mail servers to cloud-based environments, improving uptime and accessibility.</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Projects</h2>
+            <div class="row g-4">
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        
+                            <img src="https://images.unsplash.com/photo-1561736778-92e52a7769ef?q=80&amp;w=1170&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="CRM Student Management app for University of Oxford">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">CRM Student Management app for University of Oxford</h5>
+                            <p class="card-text" style="white-space: pre-line;">A mission-critical student management ecosystem for the University of Oxford</p>
+                            <a href="project/1.html" class="btn btn-outline-primary btn-sm rounded-pill mt-2">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        
+                            <img src="https://images.unsplash.com/photo-1669023414162-5bb06bbff0ec?q=80&amp;w=1332&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="Global Tax Compliance Microservices">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">Global Tax Compliance Microservices</h5>
+                            <p class="card-text" style="white-space: pre-line;">A high-impact, enterprise-scale replacement for third-party VAT management software</p>
+                            <a href="project/2.html" class="btn btn-outline-primary btn-sm rounded-pill mt-2">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm project-card">
+                        
+                            <img src="https://images.unsplash.com/photo-1664455340023-214c33a9d0bd?q=80&amp;w=1332&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.1.0&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img-top" alt="E-Commerce Platform">
+                        
+                        <div class="card-body p-4">
+                            <h5 class="card-title fw-bold">E-Commerce Platform</h5>
+                            <p class="card-text" style="white-space: pre-line;">A fully featured e-commerce application</p>
+                            <a href="project/3.html" class="btn btn-outline-primary btn-sm rounded-pill mt-2">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Education</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item">
+                    <div class="timeline-content shadow-sm p-4 rounded bg-white">
+                        <h4 class="fw-bold text-primary">Masters in Information Systems</h4>
+                        <h5 class="text-muted">University of Surrey, United Kingdom</h5>
+                        <p class="text-muted small"><i class="far fa-calendar-alt me-2"></i>2010 - 2011</p>
+                        <p style="white-space: pre-line;">• Specialized in Artificial Intelligence
+• Thesis on Neural Networks
+• Challenges of Computing
+• Interaction Design
+• Information Systems Development
+• Multimedia Security
+• Service oriented architecture
+• Project Management &amp; Business Strategy
+• Databases &amp; Knowledge Discovery
+• Cloud computing</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content shadow-sm p-4 rounded bg-white">
+                        <h4 class="fw-bold text-primary">Bachelor in Information Technology</h4>
+                        <h5 class="text-muted">Anna University, India</h5>
+                        <p class="text-muted small"><i class="far fa-calendar-alt me-2"></i>2006 - 2010</p>
+                        <p style="white-space: pre-line;">• President of Coding &amp; Sports Club
+• Minor in Business Administration
+• Advanced Mathematics
+• Data Structures &amp; Algorithms
+• Microprocessors
+• OOP programming</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Contact Me</h2>
+            <p class="text-center mb-5">Feel free to reach out if you have any questions, would like to collaborate, or just want to say hi!</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-5">
+                            <!-- 
+                                STATIC SITE NOTE: 
+                                To make this form work on GitHub Pages, create a form on https://formspree.io/ 
+                                and replace 'YOUR_FORM_ID' with your actual Form ID.
+                            -->
+                            <form action="https://formspree.io/f/mreazaow" method="POST">
+                                <!-- <input type="hidden" name="csrf_token" value="IjA3OWJlM2UyMWNhZjQyYTQ0OWFiNGY5OWU0OTRkZGJkMmMxNGYzZDki.aYUlrw.pORt5UijZzUQcwB9veSthcCSKjA"> -->
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Your email</label>
+                                    <input type="email" class="form-control" id="email" name="email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="message" class="form-label">Message</label>
+                                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill">Send Message</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p class="mb-0">&copy; <span id="current-year"></span> Lokesh Sivakumar Portfolio - Handcrafted with love using Flask.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Parallax Scroll Effect -->
+    <script>
+        // Parallax effect for hero section elements
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            
+            parallaxElements.forEach(function(element) {
+                const speed = element.getAttribute('data-speed');
+                const yPos = -(scrollPosition * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+    </script>
+
+    <!-- Toast Initialization Script -->
+    <script>
+        // Auto-show all toasts on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+            var toastList = toastElList.map(function(toastEl) {
+                var toast = new bootstrap.Toast(toastEl);
+                toast.show();
+                return toast;
+            });
+        });
+    </script>
+
+    <!-- Custom Scroll Highlighting Script -->
+    <script>
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        window.addEventListener("scroll", () => {
+            let current = "";
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 150) {
+                    current = section.getAttribute("id");
+                }
+            });
+
+            navLinks.forEach((link) => {
+                link.classList.remove("active");
+                if (link.getAttribute("href").includes(current)) {
+                    link.classList.add("active");
+                }
+            });
+        });
+    </script>
+    
+    <!-- Set Current Year in Footer -->
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

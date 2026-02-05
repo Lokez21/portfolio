@@ -90,6 +90,29 @@ From here, you can easily modify:
 - **Education/Experience**: Add or edit your professional and academic history.
 - **Projects**: Add new projects with blurbs, long descriptions, and images.
 
+## 🧊 Static Site Generation
+To host your portfolio for free on **GitHub Pages**, you can convert this dynamic Flask app into static HTML.
+
+### 1. Update Content
+Always run the local server to update your content via the Admin panel:
+```bash
+python app.py
+```
+Go to `http://127.0.0.1:5000/admin`, log in, and make your changes.
+
+### 2. Generate Static Files
+Once you are happy with the content, run the freeze script:
+```bash
+python freeze.py
+```
+This will generate a `docs/` folder containing your complete portfolio as HTML files.
+
+### 3. Deploy
+Upload the contents of the `docs/` folder to your GitHub repository (or the `docs/` folder if configured for GitHub Pages).
+
+### 4. Contact Form Note
+The static site uses **Formspree** for the contact form. Make sure to update the `action` URL in `templates/index.html` with your own Formspree ID before deploying.
+
 ## 📄 License
 
 Created by Lokesh.This project is open-source and available under the [MIT License](LICENSE). 

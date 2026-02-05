@@ -182,12 +182,13 @@
                 <div class="col-md-8">
                     <div class="card border-0 shadow-lg">
                         <div class="card-body p-5">
-                            <form action="{{ url_for('contact') }}" method="POST">
-                                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
-                                </div>
+                            <!-- 
+                                STATIC SITE NOTE: 
+                                To make this form work on GitHub Pages, create a form on https://formspree.io/ 
+                                and replace 'YOUR_FORM_ID' with your actual Form ID.
+                            -->
+                            <form action="{{ form_endpoint }}" method="POST">
+                                <!-- <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"> -->
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Your email</label>
                                     <input type="email" class="form-control" id="email" name="email" required>
@@ -210,7 +211,7 @@
     <!-- Footer -->
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p class="mb-0">&copy; <span id="current-year"></span> {% if about and about.name %}{{ about.name }} Portfolio{% endif %}. All Rights Reserved.</p>
+            <p class="mb-0">&copy; <span id="current-year"></span> {% if about and about.name %}{{ about.name }} Portfolio{% endif %} - Handcrafted with love using Flask.</p>
         </div>
     </footer>
 

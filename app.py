@@ -4,6 +4,9 @@ from flask_admin.menu import MenuLink
 from flask_admin.form.upload import ImageUploadField
 from flask_admin.contrib.sqla import ModelView
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_wtf.csrf import CSRFProtect
 from config import Config
@@ -112,20 +115,23 @@ def index():
     education = Education.query.order_by(Education.year_start.desc()).all()
     experience = Experience.query.order_by(Experience.year_start.desc()).all()
     projects = Project.query.all()
-    return render_template('index.html', about=about, education=education, experience=experience, projects=projects)
+    projects = Project.query.all()
+    form_endpoint = app.config.get('FORM_ENDPOINT')
+    return render_template('index.html', about=about, education=education, experience=experience, projects=projects, form_endpoint=form_endpoint)
 
-@app.route('/project/<int:project_id>')
+@app.route('/project/<int:project_id>.html')
 def project_detail(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project_detail.html', project=project)
 
-@app.route('/contact', methods=['POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'GET':
+        return redirect(url_for('index', _anchor='contact'))
     if request.method == 'POST':
-        name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        new_contact = Contact(name=name, email=email, message=message)
+        new_contact = Contact(email=email, message=message)
         try:
             db.session.add(new_contact)
             db.session.commit()
