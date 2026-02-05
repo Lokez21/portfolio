@@ -114,13 +114,15 @@ def index():
     projects = Project.query.all()
     return render_template('index.html', about=about, education=education, experience=experience, projects=projects)
 
-@app.route('/project/<int:project_id>')
+@app.route('/project/<int:project_id>.html')
 def project_detail(project_id):
     project = Project.query.get_or_404(project_id)
     return render_template('project_detail.html', project=project)
 
-@app.route('/contact', methods=['POST'])
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
+    if request.method == 'GET':
+        return redirect(url_for('index', _anchor='contact'))
     if request.method == 'POST':
         name = request.form['name']
         email = request.form['email']
