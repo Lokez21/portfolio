@@ -70,6 +70,7 @@ class Project(db.Model):
     description = db.Column(db.Text, nullable=True)  # Long description for the detail page
     image_url = db.Column(db.String(200), nullable=True)
     link = db.Column(db.String(200), nullable=True)
+    link_visibility = db.Column(db.Boolean, default=True)
 
     def __repr__(self):
         return f'<Project {self.title}>'

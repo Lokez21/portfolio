@@ -15,7 +15,7 @@ def seed():
 
         # 1. About
         about = About(
-            name="Your Name",
+            name="YourName",
             job_title="Web Designer & Developer",
             email="user@example.com",
             linkedin_url="https://linkedin.com/in/username",
@@ -24,8 +24,6 @@ def seed():
             profile_image="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
         )
         db.session.add(about)
-        db.session.query(Project).delete()
-        db.session.query(User).delete()
         
         # 2. Education
         edu1 = Education(
@@ -67,21 +65,24 @@ def seed():
             blurb="A fully featured e-commerce application built with Next.js and Stripe.",
             description="A fully featured e-commerce application built with Next.js and Stripe.\n\nKey Features:\n• User authentication and profile management\n• Shopping cart and checkout functionality\n• Admin dashboard for product management\n• Secure payment processing with Stripe\n• Responsive design for all devices\n\nThis project demonstrates the ability to build a full-stack application with modern technologies. It includes a robust backend for managing products, orders, and users, and a sleek frontend for a seamless shopping experience.",
             image_url="https://images.unsplash.com/photo-1557821552-17105176677c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-            link="#"
+            link="#",
+            link_visibility=True
         )
         proj2 = Project(
             title="Task Management App",
             blurb="A productivity tool aimed availability for remote teams.",
             description="A productivity tool aimed at improving availability and collaboration for remote teams.\n\nKey Features:\n• Real-time updates using WebSockets\n• Drag and drop Kanban board\n• Integrated with Slack and Calendar\n• Team analytics and reporting\n• Customizable workflows\n\nBuilt to help teams stay organized and efficient, this app provides a centralized hub for task management. The real-time features ensure that everyone is always on the same page.",
             image_url="https://images.unsplash.com/photo-1540350394557-8d14678e7f91?ixlib=rb-1.2.1&auto=format&fit=crop&w=1332&q=80",
-            link="#"
+            link="#",
+            link_visibility=True
         )
         proj3 = Project(
             title="Health & Fitness Tracker",
             blurb="Mobile-first web application to track workouts and nutrition.",
             description="Mobile-first web application designed to help users track their workouts and nutrition goals.\n\nKey Features:\n• Interactive charts using D3.js\n• Calorie counter with extensive food database\n• Social sharing features\n• Workout routine planner\n• Progress tracking and analytics\n\nThis application focuses on user engagement and data visualization, helping users verify their progress and stay motivated on their fitness journey.",
             image_url="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
-            link="#"
+            link="#",
+            link_visibility=True
         )
         db.session.add_all([proj1, proj2, proj3])
 

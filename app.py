@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_admin import Admin, AdminIndexView, expose
+from flask_admin.menu import MenuLink
+from flask_admin.form.upload import ImageUploadField
 from flask_admin.contrib.sqla import ModelView
+import os
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_wtf.csrf import CSRFProtect
 from config import Config
@@ -73,9 +76,30 @@ class UserView(MyModelView):
     def inaccessible_callback(self, name, **kwargs):
         return redirect(url_for('login', next=request.url))
 
+class AboutView(MyModelView):
+    def is_accessible(self):
+        return current_user.is_authenticated
+
+    def inaccessible_callback(self, name, **kwargs):
+        return redirect(url_for('login', next=request.url))
+
+    form_overrides = {
+        'profile_image': ImageUploadField
+    }
+
+    form_args = {
+        'profile_image': {
+            'label': 'Profile Image',
+            'base_path': os.path.join(app.root_path, 'static', 'images'),
+            'url_relative_path': 'images/',
+            'allowed_extensions': ['jpg', 'jpeg', 'png', 'gif']
+        }
+    }
+
 # Setup Flask-Admin
 admin = Admin(app, name='Portfolio CMS', template_mode='bootstrap4', index_view=MyAdminIndexView())
-admin.add_view(MyModelView(About, db.session))
+admin.add_link(MenuLink(name='Back to Site', url='/'))
+admin.add_view(AboutView(About, db.session))
 admin.add_view(MyModelView(Education, db.session))
 admin.add_view(MyModelView(Experience, db.session))
 admin.add_view(MyModelView(Project, db.session))

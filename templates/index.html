@@ -26,9 +26,9 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
             </div>
@@ -78,7 +78,7 @@
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-4 mb-md-0">
                     {% if about and about.profile_image %}
-                        <img src="{{ about.profile_image }}" alt="Profile" class="img-fluid rounded-circle profile-img shadow-lg">
+                        <img src="{{ about.profile_image if about.profile_image.startswith('http') else url_for('static', filename='images/' + about.profile_image) }}" alt="Profile" class="img-fluid rounded-circle profile-img shadow-lg">
                     {% else %}
                         <div class="placeholder-profile rounded-circle bg-secondary d-flex align-items-center justify-content-center mx-auto text-white">
                             <i class="fas fa-user fa-5x"></i>
@@ -98,29 +98,8 @@
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5 section-title">Education</h2>
-            <div class="timeline">
-                {% for edu in education %}
-                <div class="timeline-item">
-                    <div class="timeline-content shadow-sm p-4 rounded bg-white">
-                        <h4 class="fw-bold text-primary">{{ edu.degree }}</h4>
-                        <h5 class="text-muted">{{ edu.institution }}</h5>
-                        <p class="text-muted small"><i class="far fa-calendar-alt me-2"></i>{{ edu.year_start }} - {% if edu.year_end %}{{ edu.year_end }}{% else %}Present{% endif %}</p>
-                        <p style="white-space: pre-line;">{{ edu.description }}</p>
-                    </div>
-                </div>
-                {% else %}
-                    <p class="text-center">No education details added yet.</p>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
-
     <!-- Experience Section -->
-    <section id="experience" class="py-5">
+    <section id="experience" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center mb-5 section-title">Experience</h2>
             <div class="row">
@@ -145,7 +124,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
+    <section id="projects" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5 section-title">Projects</h2>
             <div class="row g-4">
@@ -173,10 +152,32 @@
         </div>
     </section>
 
+    <!-- Education Section -->
+    <section id="education" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5 section-title">Education</h2>
+            <div class="timeline">
+                {% for edu in education %}
+                <div class="timeline-item">
+                    <div class="timeline-content shadow-sm p-4 rounded bg-white">
+                        <h4 class="fw-bold text-primary">{{ edu.degree }}</h4>
+                        <h5 class="text-muted">{{ edu.institution }}</h5>
+                        <p class="text-muted small"><i class="far fa-calendar-alt me-2"></i>{{ edu.year_start }} - {% if edu.year_end %}{{ edu.year_end }}{% else %}Present{% endif %}</p>
+                        <p style="white-space: pre-line;">{{ edu.description }}</p>
+                    </div>
+                </div>
+                {% else %}
+                    <p class="text-center">No education details added yet.</p>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-5">
         <div class="container">
             <h2 class="text-center mb-5 section-title">Contact Me</h2>
+            <p class="text-center mb-5">Feel free to reach out if you have any questions, would like to collaborate, or just want to say hi!</p>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card border-0 shadow-lg">
