@@ -129,10 +129,9 @@ def contact():
     if request.method == 'GET':
         return redirect(url_for('index', _anchor='contact'))
     if request.method == 'POST':
-        name = request.form['name']
         email = request.form['email']
         message = request.form['message']
-        new_contact = Contact(name=name, email=email, message=message)
+        new_contact = Contact(email=email, message=message)
         try:
             db.session.add(new_contact)
             db.session.commit()
