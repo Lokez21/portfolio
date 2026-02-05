@@ -4,6 +4,9 @@ from flask_admin.menu import MenuLink
 from flask_admin.form.upload import ImageUploadField
 from flask_admin.contrib.sqla import ModelView
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from flask_login import LoginManager, login_user, logout_user, login_required, current_user
 from flask_wtf.csrf import CSRFProtect
 from config import Config
@@ -112,7 +115,9 @@ def index():
     education = Education.query.order_by(Education.year_start.desc()).all()
     experience = Experience.query.order_by(Experience.year_start.desc()).all()
     projects = Project.query.all()
-    return render_template('index.html', about=about, education=education, experience=experience, projects=projects)
+    projects = Project.query.all()
+    form_endpoint = app.config.get('FORM_ENDPOINT')
+    return render_template('index.html', about=about, education=education, experience=experience, projects=projects, form_endpoint=form_endpoint)
 
 @app.route('/project/<int:project_id>.html')
 def project_detail(project_id):
